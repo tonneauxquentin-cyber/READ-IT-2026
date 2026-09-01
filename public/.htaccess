@@ -12,7 +12,7 @@ RewriteRule ^ - [L]
 # ROUTE TESTS.SHOW
 # PATTERN: ...
 # TARGET: ...
-RewriteRule ^readit\/([1-9][0-9]*)\/[a-z0-9][a-z0-9\-]*[a-z0-9]\.html$ ?READ_IT=show&id=$1 [L]
+
 
  
 # --------------------------------------------
