@@ -18,8 +18,8 @@ function showAction(PDO $conn, int $id){
     include_once '../app/models/postsModel.php';
     $post = PostsModel\findOneById($conn, $id);
     global $title, $content;
-    $title = $post['name'];
+    $title = $post['title'];
     ob_start();
-    include '..app/views/posts/show.php';
+    include '../app/views/posts/show.php';
     $content = ob_get_clean();
 }

@@ -17,3 +17,14 @@ function truncate($text, $limit = 100)
 function dateFormator (string $date, string $format = "d/m/Y") : string{
     return date($format, strtotime($date));
 }
+function slugify(string $string): string {
+    //Remplacer les carctères accentués par leur équivalent non accentué
+    $string = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $string);
+    //Mettre en minuscule
+    $string = strtolower($string);
+    //Remplacer tout ce qui n'est pas une lettre, un chiffre ou un tiret par un tiret
+    $string = preg_replace('/[^a-z0-9]+/', '-', $string);
+    //
+    $string = trim($string, '-');
+    return $string;
+}
