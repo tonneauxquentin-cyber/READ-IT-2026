@@ -24,7 +24,7 @@ function slugify(string $string): string {
     $string = strtolower($string);
     //Remplacer tout ce qui n'est pas une lettre, un chiffre ou un tiret par un tiret
     $string = preg_replace('/[^a-z0-9]+/', '-', $string);
-    //
+    //Supprimer les tirets en début et fin de chaîne
     $string = trim($string, '-');
     return $string;
 }
