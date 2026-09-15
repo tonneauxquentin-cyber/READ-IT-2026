@@ -19,6 +19,11 @@ RewriteRule ^posts\/([1-9][0-9]*)\/[a-z0-9]([a-z0-9\-]*[a-z0-9])*$ index.php?pos
 # URL: ?users=login-form DANS LE ROUTER
 RewriteRule ^users\/login\-form$ ?users=login-form [L]
 
+# ROUTE USERS.LOGIN
+# PATTERN: /users/login DANS LE HREF
+# URL: ?users=login DANS LE ROUTER
+RewriteRule ^users\/login$ ?users=login [L]
+
 
  
 # --------------------------------------------
