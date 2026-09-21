@@ -14,11 +14,15 @@ function loginFormAction(PDO $conn) {
 }
 function loginAction(PDO $conn, array $userData){
     //On va chercher le/la user.euse qui correspond aux userData
-    include_once '../app/models/usersModel.php';
     $user = UsersModel\findOneByLoginAndPwd($conn, $userData);
     //Si y en a pas, on redirige vers la route login
-    if(!$user) header('location:' . PUBLIC_BASE_URL . '/users/login-form');
+    if(!$user):
+        if (isset($_SESSION['user'])) unset($_SESSION['user']);
+         header('location:' . PUBLIC_BASE_URL . '/users/login-form');
     //On redirige vers le dashboard admin
-    header('location:' . ADMIN_BASE_URL);
-
+    else:
+        //On donne le badge
+        $_SESSION['user'] = $user;
+        header('location:' . ADMIN_BASE_URL);
+    endif;
 }
