@@ -7,7 +7,15 @@
 // Objectif: tuer la variable de session (unset())
 // Rediriger vers l'accueil du public
 if (isset($_GET['users'])):
-    include_once '../app/routers/UsersRouter.php';
+    include_once '../app/routers/usersRouter.php';
+
+//ROUTE CATEGORIES.INDEX
+//PATTERN: categories/
+//URL: ?categories=index
+//CTRL: categoriesController
+//ACTION: index
+elseif (isset($_GET['categories'])):
+    include_once '../app/routers/categoriesRouter.php';
 
 //ROUTE POSTS.SHOW
 //PATTERN: /posts/id/slug

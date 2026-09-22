@@ -13,6 +13,11 @@ RewriteRule ^ - [L]
 # PATTERN: /users/logout DANS LE HREF
 # URL: ?users=logout DANS LE ROUTER
 RewriteRule ^users\/logout$ ?users=logout [L]
+
+# ROUTE CATEGORIES.INDEX
+# PATTERN: /categories DANS LE HREF
+# URL: ?categories=index DANS LE ROUTER
+RewriteRule ^categories$ ?categories=index [L]
  
 # --------------------------------------------
 # FALLBACK
