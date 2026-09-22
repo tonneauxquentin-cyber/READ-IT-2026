@@ -24,7 +24,6 @@ RewriteRule ^users\/login\-form$ ?users=login-form [L]
 # URL: ?users=login DANS LE ROUTER
 RewriteRule ^users\/login$ ?users=login [L]
 
-
  
 # --------------------------------------------
 # FALLBACK
